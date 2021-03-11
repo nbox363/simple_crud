@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <form method="post" action="" id="post-form">
+        {% csrf_token %}
+        <input type="text" name="post-name" placeholder="name" id="post-name">
+
+        <select id="post-family">
+            {% for f in family %}
+                <option id="" name="" value="">
+                    {{ f.name }}
+                </option>
+            {% endfor %}
+        </select>
+        <input type="checkbox" name="post-healthy" placeholder="healthy" id="post-healthy">
+        <input type="number" name="post-legs" placeholder="legs" id="post-legs">
+        <input type="submit" value="Post" class="tiny button">
+    </form>
+
+{% endblock content %}
+<script src="{% static 'js/main.js' %}"></script>
